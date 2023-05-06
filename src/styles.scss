@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: "flexo";
+    src: url("assets/fonts/Flexo-CapsDEMO.otf") format("woff2");
+}
+
+body {
+    font-family: "flexo";
+}

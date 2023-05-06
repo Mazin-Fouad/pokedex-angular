@@ -1,0 +1,56 @@
+section {
+    min-height: 100vh;
+    background-color: #1f1f1f;
+    font-family: "flexo";
+    color: #f5f5f5;
+
+    img {
+        width: 450px;
+    }
+
+    .roll-in-right {
+        animation: roll-in-right 0.6s ease-out both;
+    }
+
+    @keyframes roll-in-right {
+        0% {
+            transform: translateX(800px) rotate(540deg);
+            opacity: 0;
+        }
+        100% {
+            transform: translateX(0) rotate(0deg);
+            opacity: 1;
+        }
+    }
+
+    .pokeball {
+        width: 60px;
+    }
+
+    .roll-in-left {
+        animation: roll-in-left 0.8s ease-out both;
+    }
+
+    .roll-in-left-1 {
+        animation-delay: 1.9s;
+    }
+
+    .roll-in-left-2 {
+        animation-delay: 1.3s;
+    }
+
+    .roll-in-left-3 {
+        animation-delay: 0.9s;
+    }
+
+    @keyframes roll-in-left {
+        0% {
+            transform: translateX(-800px) rotate(-540deg);
+            opacity: 0;
+        }
+        100% {
+            transform: translateX(0) rotate(0deg);
+            opacity: 1;
+        }
+    }
+}
