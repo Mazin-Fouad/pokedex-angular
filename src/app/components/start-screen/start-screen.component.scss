@@ -10,6 +10,10 @@ section {
 
     img {
         max-width: 450px;
+
+        @media (max-width: 576px) {
+            max-width: 200px;
+        }
     }
 
     .roll-in-right {
@@ -67,7 +71,11 @@ section {
         cursor: pointer;
 
         img {
-            width: 80px;
+            width: 50px;
+
+            @media (max-width: 576px) {
+                max-width: 33px;
+            }
         }
     }
 
@@ -84,5 +92,24 @@ section {
         75% {
             opacity: 0;
         }
+    }
+
+    @media (max-width: 576px) {
+        .pokeball {
+            max-width: 40px;
+        }
+    }
+
+    .musicIcons-container {
+        height: unset;
+
+        img {
+            width: 35px;
+            cursor: pointer;
+        }
+    }
+
+    .clicked {
+        transform: scale(1.3);
     }
 }

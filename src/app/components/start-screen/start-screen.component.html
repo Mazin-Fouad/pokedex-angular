@@ -1,6 +1,26 @@
 <section>
+  <div class="container musicIcons-container d-flex justify-content-end">
+    <img
+      class="mt-5 me-2"
+      src="assets/imgs/icons/play.png"
+      alt="play music"
+      matTooltip="Click to play music"
+      matTooltipPosition="below"
+      [ngClass]="{ clicked: isClicked }"
+      (click)="playMusic()"
+    />
+    <img
+      class="mt-5"
+      src="assets/imgs/icons/stop.png"
+      alt="stop music"
+      matTooltip="Click to stop music"
+      matTooltipPosition="below"
+      (click)="stopMusic()"
+    />
+  </div>
+
   <div
-    class="container d-flex flex-column justify-content-center align-items-start"
+    class="container d-flex flex-column justify-content-center align-items-sm-center align-items-md-start ms-auto me-auto"
   >
     <h2 class="mb-3 fw-bold">Welcomt to the</h2>
     <div class="imgs-container d-md-flex align-items-center">
@@ -29,7 +49,7 @@
     </div>
   </div>
 
-  <a href="#" class="text-white fs-1 fw-bolder blink-1"
+  <a href="#" class="text-white fs-2 fw-bolder blink-1"
     >Discover <img src="assets/imgs/enter.png" alt=""
   /></a>
 </section>
