@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { AudioService } from 'src/services/audio.service';
 
 @Component({
-  selector: 'app-start-screen',
-  templateUrl: './start-screen.component.html',
-  styleUrls: ['./start-screen.component.scss'],
+  selector: 'app-navbar',
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.scss'],
 })
-export class StartScreenComponent {
+export class NavbarComponent {
   isClicked: boolean = false;
   constructor(private audioService: AudioService) {}
 

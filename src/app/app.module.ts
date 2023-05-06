@@ -6,9 +6,12 @@ import { AppComponent } from './app.component';
 import { StartScreenComponent } from './components/start-screen/start-screen.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MainSectionComponent } from './components/main-section/main-section.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { LandingSectionComponent } from './components/landing-section/landing-section.component';
 
 @NgModule({
-  declarations: [AppComponent, StartScreenComponent],
+  declarations: [AppComponent, StartScreenComponent, MainSectionComponent, NavbarComponent, LandingSectionComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
