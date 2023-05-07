@@ -9,14 +9,25 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MainSectionComponent } from './components/main-section/main-section.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LandingSectionComponent } from './components/landing-section/landing-section.component';
+import { SearchSectionComponent } from './components/search-section/search-section.component';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
-  declarations: [AppComponent, StartScreenComponent, MainSectionComponent, NavbarComponent, LandingSectionComponent],
+  declarations: [
+    AppComponent,
+    StartScreenComponent,
+    MainSectionComponent,
+    NavbarComponent,
+    LandingSectionComponent,
+    MainSectionComponent,
+    SearchSectionComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatTooltipModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
