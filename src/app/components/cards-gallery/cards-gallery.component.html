@@ -1,0 +1,23 @@
+<section class="pt-5">
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-md-3" *ngFor="let pokemon of pokemons">
+        <div class="card mb-4 ms-auto me-auto">
+          <h4 class="ms-auto mt-1 me-1 fw-bold">
+            {{ pokemon.id.toString().padStart(3, "0") }}
+          </h4>
+          <img
+            [src]="pokemon.sprites.other.home.front_default"
+            class="card-img-top"
+          />
+          <div class="card-body">
+            <h3 class="card-title text-center fs-4 fw-bold">
+              {{ pokemon.name | titlecase }}
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button mat-fab extended color="primary">More Pokemons</button>
+  </div>
+</section>

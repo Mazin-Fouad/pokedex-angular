@@ -11,6 +11,10 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { LandingSectionComponent } from './components/landing-section/landing-section.component';
 import { SearchSectionComponent } from './components/search-section/search-section.component';
 import { MatInputModule } from '@angular/material/input';
+import { CardsGalleryComponent } from './components/cards-gallery/cards-gallery.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -21,6 +25,7 @@ import { MatInputModule } from '@angular/material/input';
     LandingSectionComponent,
     MainSectionComponent,
     SearchSectionComponent,
+    CardsGalleryComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,6 +33,9 @@ import { MatInputModule } from '@angular/material/input';
     BrowserAnimationsModule,
     MatTooltipModule,
     MatInputModule,
+    HttpClientModule,
+    MatButtonModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

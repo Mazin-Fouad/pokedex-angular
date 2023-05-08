@@ -1,0 +1,20 @@
+section {
+    background-color: #1f1f1f;
+    color: #f1f1f1;
+
+    .card {
+        background-color: #535353;
+        cursor: pointer;
+
+        img {
+            height: 150px !important;
+            object-fit: contain;
+            transition: all ease-in-out 0.8s;
+
+            &:hover {
+                transition: all ease-in-out 0.9s;
+                transform: translateY(-20px);
+            }
+        }
+    }
+}
