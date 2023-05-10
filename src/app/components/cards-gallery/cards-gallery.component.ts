@@ -29,7 +29,7 @@ export class CardsGalleryComponent implements OnInit {
 
   loadMorePokemons() {
     let lastPokemonIndex = this.pokemons.length;
-    this.fetchPokemons(lastPokemonIndex, 4);
+    this.fetchPokemons(lastPokemonIndex + 1, 4);
     this.count += 4;
   }
 
