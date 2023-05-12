@@ -15,6 +15,8 @@ import { CardsGalleryComponent } from './components/cards-gallery/cards-gallery.
 import { HttpClientModule } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { PokemonDetailsComponent } from './components/pokemon-details/pokemon-details.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import { MatIconModule } from '@angular/material/icon';
     MainSectionComponent,
     SearchSectionComponent,
     CardsGalleryComponent,
+    PokemonDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,6 +39,7 @@ import { MatIconModule } from '@angular/material/icon';
     HttpClientModule,
     MatButtonModule,
     MatIconModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

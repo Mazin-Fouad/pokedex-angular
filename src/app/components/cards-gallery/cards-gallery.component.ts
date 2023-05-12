@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonData } from 'src/app/models/pokemon-data';
 import { PokemonApiService } from 'src/services/pokemon-api.service';
+import {
+  MatDialog,
+  MAT_DIALOG_DATA,
+  MatDialogRef,
+} from '@angular/material/dialog';
+import { PokemonDetailsComponent } from '../pokemon-details/pokemon-details.component';
 
 @Component({
   selector: 'app-cards-gallery',
@@ -11,7 +17,10 @@ export class CardsGalleryComponent implements OnInit {
   pokemons: any[] = [];
   count: number = 12;
 
-  constructor(private pokemonApiService: PokemonApiService) {}
+  constructor(
+    private pokemonApiService: PokemonApiService,
+    public dialog: MatDialog
+  ) {}
 
   ngOnInit() {
     this.fetchPokemons(1, 12);
@@ -24,7 +33,7 @@ export class CardsGalleryComponent implements OnInit {
         this.pokemons.push(pokemon);
       });
     }
-    this.count += count;
+    // this.count += count;
   }
 
   loadMorePokemons() {
@@ -78,5 +87,15 @@ export class CardsGalleryComponent implements OnInit {
       default:
         return '';
     }
+  }
+
+  openDialog(pokemon: any): void {
+    const dialogRef = this.dialog.open(PokemonDetailsComponent, {
+      data: pokemon,
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log('The dialog was closed');
+    });
   }
 }
