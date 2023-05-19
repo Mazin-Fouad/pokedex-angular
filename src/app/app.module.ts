@@ -18,6 +18,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { PokemonDetailsComponent } from './components/pokemon-details/pokemon-details.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BackgroundStyleDirective } from './directives/background-style.directive';
+import { ProgressbarComponent } from './components/progressbar/progressbar.component';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,7 @@ import { BackgroundStyleDirective } from './directives/background-style.directiv
     CardsGalleryComponent,
     PokemonDetailsComponent,
     BackgroundStyleDirective,
+    ProgressbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,6 +45,7 @@ import { BackgroundStyleDirective } from './directives/background-style.directiv
     MatButtonModule,
     MatIconModule,
     MatDialogModule,
+    MatProgressBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,0 +1,104 @@
+<div class="container mt-4 p-2">
+  <div>
+    <span class="fw-bold">{{ pokemon.stats[0].stat.name | uppercase }}</span>
+    <div
+      style="width: 80%"
+      class="progress"
+      role="progressbar"
+      aria-label="Basic example"
+      aria-valuenow="0"
+    >
+      <div
+        class="progress-bar"
+        [ngClass]="getPokemonType(pokemon)"
+        [style.width.%]="pokemon.stats[0].base_stat"
+      ></div>
+    </div>
+  </div>
+
+  <div class="mt-2">
+    <span class="fw-bold">{{ pokemon.stats[1].stat.name | uppercase }}</span>
+    <div
+      style="width: 80%"
+      class="progress"
+      role="progressbar"
+      aria-label="Basic example"
+      aria-valuenow="0"
+    >
+      <div
+        class="progress-bar"
+        [ngClass]="getPokemonType(pokemon)"
+        [style.width.%]="pokemon.stats[1].base_stat"
+      ></div>
+    </div>
+  </div>
+
+  <div class="mt-2">
+    <span class="fw-bold">{{ pokemon.stats[2].stat.name | uppercase }}</span>
+    <div
+      style="width: 80%"
+      class="progress"
+      role="progressbar"
+      aria-label="Basic example"
+      aria-valuenow="0"
+    >
+      <div
+        class="progress-bar"
+        [ngClass]="getPokemonType(pokemon)"
+        [style.width.%]="pokemon.stats[2].base_stat"
+      ></div>
+    </div>
+  </div>
+
+  <div class="mt-2">
+    <span class="fw-bold">{{ pokemon.stats[3].stat.name | uppercase }}</span>
+    <div
+      style="width: 80%"
+      class="progress"
+      [ngClass]="getPokemonType(pokemon)"
+      role="progressbar"
+      aria-label="Basic example"
+      aria-valuenow="0"
+    >
+      <div
+        class="progress-bar"
+        [ngClass]="getPokemonType(pokemon)"
+        [style.width.%]="pokemon.stats[3].base_stat"
+      ></div>
+    </div>
+  </div>
+
+  <div class="mt-2">
+    <span class="fw-bold">{{ pokemon.stats[4].stat.name | uppercase }}</span>
+    <div
+      style="width: 80%"
+      class="progress"
+      role="progressbar"
+      aria-label="Basic example"
+      aria-valuenow="0"
+    >
+      <div
+        class="progress-bar"
+        [ngClass]="getPokemonType(pokemon)"
+        [style.width.%]="pokemon.stats[4].base_stat"
+      ></div>
+    </div>
+  </div>
+
+  <div class="mt-2">
+    <span class="fw-bold">{{ pokemon.stats[5].stat.name | uppercase }}</span>
+    <div
+      style="width: 80%"
+      class="progress"
+      role="progressbar"
+      aria-label="Basic example"
+      aria-valuenow="0"
+    >
+      <div
+        class="progress-bar"
+        [ngClass]="getPokemonType(pokemon)"
+        [style.width.%]="pokemon.stats[5].base_stat"
+      ></div>
+    </div>
+  </div>
+</div>
