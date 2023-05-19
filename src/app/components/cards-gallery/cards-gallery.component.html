@@ -9,6 +9,7 @@
         <div
           class="card mb-4 ms-auto me-auto"
           [ngClass]="getPokemonType(pokemon)"
+          BackgroundStyle
         >
           <h4 class="ms-auto mt-1 me-1 fw-bold">
             {{ pokemon.id.toString().padStart(3, "0") }}
@@ -25,8 +26,14 @@
         </div>
       </div>
     </div>
-    <button mat-fab extended color="primary" (click)="loadMorePokemons()">
-      More Pokemons
+    <button
+      class="fw-bold"
+      mat-fab
+      extended
+      color="primary"
+      (click)="loadMorePokemons()"
+    >
+      More Pokémons
     </button>
   </div>
 </section>

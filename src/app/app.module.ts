@@ -17,6 +17,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { PokemonDetailsComponent } from './components/pokemon-details/pokemon-details.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { BackgroundStyleDirective } from './directives/background-style.directive';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     SearchSectionComponent,
     CardsGalleryComponent,
     PokemonDetailsComponent,
+    BackgroundStyleDirective,
   ],
   imports: [
     BrowserModule,

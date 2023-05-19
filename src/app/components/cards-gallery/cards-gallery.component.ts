@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonData } from 'src/app/models/pokemon-data';
 import { PokemonApiService } from 'src/services/pokemon-api.service';
+import { Observable, forkJoin } from 'rxjs';
 import {
   MatDialog,
   MAT_DIALOG_DATA,
@@ -16,6 +17,7 @@ import { PokemonDetailsComponent } from '../pokemon-details/pokemon-details.comp
 export class CardsGalleryComponent implements OnInit {
   pokemons: any[] = [];
   count: number = 12;
+  totalPokemonCount: number = 0;
 
   constructor(
     private pokemonApiService: PokemonApiService,
@@ -28,12 +30,16 @@ export class CardsGalleryComponent implements OnInit {
   }
 
   fetchPokemons(startIndex: number, count: number) {
+    const requests = [];
+
     for (let i = startIndex; i < startIndex + count; i++) {
-      this.pokemonApiService.getPokemons(i).subscribe((pokemon) => {
-        this.pokemons.push(pokemon);
-      });
+      requests.push(this.pokemonApiService.getPokemons(i));
     }
-    // this.count += count;
+
+    forkJoin(requests).subscribe((response) => {
+      this.pokemons = this.pokemons.concat(response);
+      console.log(this.pokemons);
+    });
   }
 
   loadMorePokemons() {
