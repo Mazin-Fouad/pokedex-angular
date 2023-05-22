@@ -1,13 +1,13 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { PokemonData } from 'src/app/models/pokemon-data';
+import { EvolutionService } from 'src/services/evolution.service';
 
 @Component({
   selector: 'app-pokemon-details',
   templateUrl: './pokemon-details.component.html',
   styleUrls: ['./pokemon-details.component.scss'],
 })
-export class PokemonDetailsComponent {
+export class PokemonDetailsComponent implements OnInit, OnDestroy {
   typeMapping = [
     { type: 'bug', path: 'assets/imgs/type_icons/bug.svg' },
     { type: 'dark', path: 'assets/imgs/type_icons/dark.svg' },
@@ -30,12 +30,20 @@ export class PokemonDetailsComponent {
   ];
 
   pokemon: any;
+  evolution: any;
+  isOpen: boolean = false;
 
   constructor(
     public dialogRef: MatDialogRef<PokemonDetailsComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    private evolutionService: EvolutionService
   ) {
     this.pokemon = data;
+  }
+
+  ngOnInit() {
+    this.fetchEvolutionChain();
+    this.isOpen = true;
   }
 
   onNoClick(): void {
@@ -83,5 +91,16 @@ export class PokemonDetailsComponent {
       default:
         return '';
     }
+  }
+
+  fetchEvolutionChain() {
+    const id = 1; // Replace with the desired ID
+    this.evolutionService.getEvolutionChain(id).subscribe((response) => {
+      console.log(response);
+    });
+  }
+
+  ngOnDestroy() {
+    this.isOpen = false;
   }
 }

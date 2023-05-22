@@ -26,7 +26,6 @@ export class CardsGalleryComponent implements OnInit {
 
   ngOnInit() {
     this.fetchPokemons(1, 12);
-    console.log(this.pokemons);
   }
 
   fetchPokemons(startIndex: number, count: number) {

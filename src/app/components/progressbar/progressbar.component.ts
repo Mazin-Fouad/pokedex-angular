@@ -1,3 +1,10 @@
+import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -6,9 +13,23 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./progressbar.component.scss'],
 })
 export class ProgressbarComponent implements OnInit {
+  stats: any[] = [];
   @Input() pokemon: any;
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.animatProgressbar();
+  }
+
+  animatProgressbar(): void {
+    this.stats = this.pokemon.stats.map((stat: any) => ({
+      base_stat: 0,
+    }));
+
+    // After 300ms seconds, set the base_stat to the actual value
+    setTimeout(() => {
+      this.stats = this.pokemon.stats;
+    }, 300);
+  }
 
   getPokemonType(pokemon: any) {
     switch (pokemon.types[0].type.name) {

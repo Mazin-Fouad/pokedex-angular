@@ -16,4 +16,8 @@ section {
         letter-spacing: 5px;
         border-right: 4px solid #ff8c38;
     }
+
+    .animation {
+        animation-duration: 2s; /* don't forget to set a duration! */
+    }
 }
