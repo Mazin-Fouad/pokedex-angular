@@ -20,6 +20,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { BackgroundStyleDirective } from './directives/background-style.directive';
 import { ProgressbarComponent } from './components/progressbar/progressbar.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { FormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -46,6 +48,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     MatIconModule,
     MatDialogModule,
     MatProgressBarModule,
+    FormsModule,
+    MatFormFieldModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

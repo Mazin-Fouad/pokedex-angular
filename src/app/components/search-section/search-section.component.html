@@ -1,19 +1,22 @@
-<section class="d-flex justify-content-center">
+<section class="p-2">
   <div
-    class="container d-flex flex-sm-column flex-md-row justify-content-md-around align-items-md-center justify-content-sm-center align-items-sm-center"
+    class="container d-flex flex-sm-column justify-content-sm-center flex-md-row justify-content-md-around align-items-center"
   >
-    <div>
+    <div class="">
       <h1 class="fs-2 fw-bold">
         Discover the new world <br />
         of Pokémons
       </h1>
     </div>
 
-    <form class="example-form">
-      <mat-form-field class="example-full-width">
-        <mat-label>Search your Pokémon</mat-label>
-        <input matInput placeholder="Pikachu" />
-      </mat-form-field>
-    </form>
+    <mat-form-field appearance="fill" style="min-width: 400px">
+      <mat-label>Search Pokémon</mat-label>
+      <input
+        matInput
+        placeholder="Charmeleon"
+        [(ngModel)]="childValue"
+        (input)="sendValue()"
+      />
+    </mat-form-field>
   </div>
 </section>

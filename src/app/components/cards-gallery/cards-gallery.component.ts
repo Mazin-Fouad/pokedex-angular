@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { PokemonData } from 'src/app/models/pokemon-data';
 import { PokemonApiService } from 'src/services/pokemon-api.service';
 import { Observable, forkJoin } from 'rxjs';
@@ -18,6 +18,7 @@ export class CardsGalleryComponent implements OnInit {
   pokemons: any[] = [];
   count: number = 12;
   totalPokemonCount: number = 0;
+  @Input() searchQuery: string | undefined = '';
 
   constructor(
     private pokemonApiService: PokemonApiService,
