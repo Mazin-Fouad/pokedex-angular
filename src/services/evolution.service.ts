@@ -7,12 +7,12 @@ import { environment } from 'src/environments/environment.development';
   providedIn: 'root',
 })
 export class EvolutionService {
-  private apiUrl = 'https://pokeapi.co/api/v2/evolution-chain/';
+  private apiUrl = 'https://pokeapi.co/api/v2/encounter-method/';
 
   constructor(private http: HttpClient) {}
 
-  getEvolutionChain(id: number): Observable<any> {
-    const url = `${this.apiUrl}${id}`;
-    return this.http.get(url);
+  getEncounterMethod(id: number): Observable<any> {
+    const url = this.apiUrl + id;
+    return this.http.get<any>(url);
   }
 }

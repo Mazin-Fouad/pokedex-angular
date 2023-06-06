@@ -16,6 +16,7 @@ import { PokemonDetailsComponent } from '../pokemon-details/pokemon-details.comp
 })
 export class CardsGalleryComponent implements OnInit {
   pokemons: any[] = [];
+  filteredPokemons: any[] = [];
   count: number = 12;
   totalPokemonCount: number = 0;
   @Input() searchQuery: string | undefined = '';
@@ -28,6 +29,8 @@ export class CardsGalleryComponent implements OnInit {
   ngOnInit() {
     this.fetchPokemons(1, 12);
   }
+
+  ngOnChanges() {}
 
   fetchPokemons(startIndex: number, count: number) {
     const requests = [];

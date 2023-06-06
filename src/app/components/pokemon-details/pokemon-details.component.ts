@@ -32,6 +32,8 @@ export class PokemonDetailsComponent implements OnInit, OnDestroy {
   pokemon: any;
   evolution: any;
   isOpen: boolean = false;
+  testStory: any;
+  encounterMethods: any;
 
   constructor(
     public dialogRef: MatDialogRef<PokemonDetailsComponent>,
@@ -42,7 +44,7 @@ export class PokemonDetailsComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.fetchEvolutionChain();
+    this.getDescription();
     this.isOpen = true;
   }
 
@@ -93,14 +95,15 @@ export class PokemonDetailsComponent implements OnInit, OnDestroy {
     }
   }
 
-  fetchEvolutionChain() {
-    const id = 1; // Replace with the desired ID
-    this.evolutionService.getEvolutionChain(id).subscribe((response) => {
-      console.log(response);
-    });
-  }
-
   ngOnDestroy() {
     this.isOpen = false;
+  }
+
+  getDescription() {
+    const id = this.data.id;
+    this.evolutionService.getEncounterMethod(id).subscribe((data) => {
+      this.encounterMethods = data;
+      console.log(this.encounterMethods);
+    });
   }
 }
