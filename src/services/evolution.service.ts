@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment.development';
   providedIn: 'root',
 })
 export class EvolutionService {
-  private apiUrl = 'https://pokeapi.co/api/v2/encounter-method/';
+  private apiUrl = 'https://pokeapi.co/api/v2/ability/';
 
   constructor(private http: HttpClient) {}
 

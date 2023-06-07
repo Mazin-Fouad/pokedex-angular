@@ -132,3 +132,16 @@ section {
         background-color: #d685ad;
     }
 }
+
+.text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    margin-top: -15px !important;
+
+    &:hover {
+        overflow: visible;
+        white-space: normal;
+    }
+}

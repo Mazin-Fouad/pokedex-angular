@@ -1,9 +1,9 @@
-<section class="pt-5">
+<section class="pt-5 position-relative pb-2">
   <div class="container text-center">
     <div class="row">
       <div
         class="col-sm-12 col-md-4 col-xl-3 animate__animated animate__zoomIn animation animate__slow"
-        *ngFor="let pokemon of pokemons; trackBy: trackById"
+        *ngFor="let pokemon of filteredPokemons; trackBy: trackById"
         (click)="openDialog(pokemon)"
       >
         <div
@@ -26,8 +26,13 @@
         </div>
       </div>
     </div>
+    <img
+      class="up wobble-ver-right"
+      (click)="scrollToTop()"
+      src="assets/imgs/arrow-up.png"
+    />
     <button
-      class="fw-bold"
+      class="fw-bold mb-4"
       mat-fab
       extended
       color="primary"
@@ -35,5 +40,6 @@
     >
       More Pokémons
     </button>
+    <p class="text-light">Icon was made by Flaticon</p>
   </div>
 </section>

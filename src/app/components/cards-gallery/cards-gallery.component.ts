@@ -28,9 +28,31 @@ export class CardsGalleryComponent implements OnInit {
 
   ngOnInit() {
     this.fetchPokemons(1, 12);
+    this.filteredPokemons = this.pokemons.slice(0, this.count);
   }
 
-  ngOnChanges() {}
+  ngOnChanges() {
+    if (this.searchQuery) {
+      this.filteredPokemons = this.pokemons.filter((pokemon) =>
+        pokemon.name.toLowerCase().includes(this.searchQuery?.toLowerCase())
+      );
+    } else {
+      this.filteredPokemons = this.pokemons.slice(0, this.count);
+    }
+  }
+
+  // fetchPokemons(startIndex: number, count: number) {
+  //   const requests = [];
+
+  //   for (let i = startIndex; i < startIndex + count; i++) {
+  //     requests.push(this.pokemonApiService.getPokemons(i));
+  //   }
+
+  //   forkJoin(requests).subscribe((response) => {
+  //     this.pokemons = this.pokemons.concat(response);
+  //     console.log(this.pokemons);
+  //   });
+  // }
 
   fetchPokemons(startIndex: number, count: number) {
     const requests = [];
@@ -42,6 +64,7 @@ export class CardsGalleryComponent implements OnInit {
     forkJoin(requests).subscribe((response) => {
       this.pokemons = this.pokemons.concat(response);
       console.log(this.pokemons);
+      this.filteredPokemons = this.pokemons.slice(0, this.count);
     });
   }
 
@@ -49,7 +72,14 @@ export class CardsGalleryComponent implements OnInit {
     let lastPokemonIndex = this.pokemons.length;
     this.fetchPokemons(lastPokemonIndex + 1, 4);
     this.count += 4;
+    this.filteredPokemons = this.pokemons.slice(0, this.count);
   }
+
+  // loadMorePokemons() {
+  //   let lastPokemonIndex = this.pokemons.length;
+  //   this.fetchPokemons(lastPokemonIndex + 1, 4);
+  //   this.count += 4;
+  // }
 
   trackById(index: number, pokemon: any): number {
     return pokemon.id;
@@ -105,6 +135,13 @@ export class CardsGalleryComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log('The dialog was closed');
+    });
+  }
+
+  scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
     });
   }
 }
