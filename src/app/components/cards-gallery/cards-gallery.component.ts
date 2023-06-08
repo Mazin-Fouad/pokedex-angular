@@ -41,19 +41,6 @@ export class CardsGalleryComponent implements OnInit {
     }
   }
 
-  // fetchPokemons(startIndex: number, count: number) {
-  //   const requests = [];
-
-  //   for (let i = startIndex; i < startIndex + count; i++) {
-  //     requests.push(this.pokemonApiService.getPokemons(i));
-  //   }
-
-  //   forkJoin(requests).subscribe((response) => {
-  //     this.pokemons = this.pokemons.concat(response);
-  //     console.log(this.pokemons);
-  //   });
-  // }
-
   fetchPokemons(startIndex: number, count: number) {
     const requests = [];
 
@@ -74,12 +61,6 @@ export class CardsGalleryComponent implements OnInit {
     this.count += 4;
     this.filteredPokemons = this.pokemons.slice(0, this.count);
   }
-
-  // loadMorePokemons() {
-  //   let lastPokemonIndex = this.pokemons.length;
-  //   this.fetchPokemons(lastPokemonIndex + 1, 4);
-  //   this.count += 4;
-  // }
 
   trackById(index: number, pokemon: any): number {
     return pokemon.id;
