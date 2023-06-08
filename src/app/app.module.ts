@@ -22,6 +22,7 @@ import { ProgressbarComponent } from './components/progressbar/progressbar.compo
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     PokemonDetailsComponent,
     BackgroundStyleDirective,
     ProgressbarComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,

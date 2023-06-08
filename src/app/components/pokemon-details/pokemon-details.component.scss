@@ -145,3 +145,14 @@ section {
         white-space: normal;
     }
 }
+
+.info-text {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    font-size: 12px;
+
+    img {
+        height: 35px;
+    }
+}

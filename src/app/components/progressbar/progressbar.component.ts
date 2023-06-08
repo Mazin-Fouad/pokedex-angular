@@ -5,16 +5,23 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 
 @Component({
   selector: 'app-progressbar',
   templateUrl: './progressbar.component.html',
   styleUrls: ['./progressbar.component.scss'],
 })
-export class ProgressbarComponent implements OnInit {
+export class ProgressbarComponent implements OnInit, OnChanges {
   stats: any[] = [];
   @Input() pokemon: any;
+  @Input() currentIndex: number = 0;
 
   ngOnInit() {
     this.animatProgressbar();
@@ -71,6 +78,12 @@ export class ProgressbarComponent implements OnInit {
         return 'fairy';
       default:
         return '';
+    }
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['currentIndex'] && !changes['currentIndex'].firstChange) {
+      this.animatProgressbar();
     }
   }
 }

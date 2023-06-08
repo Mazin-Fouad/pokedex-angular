@@ -133,3 +133,15 @@ section {
     height: 30px;
     object-fit: cover;
 }
+
+.shadow {
+    border-radius: 50px;
+    background: #423d3d;
+    box-shadow: inset 20px 20px 60px #383434, inset -20px -20px 60px #4c4646;
+}
+
+@media (min-width: 270px) and (max-width: 370px) {
+    .pokemon-card {
+        width: 250px !important;
+    }
+}

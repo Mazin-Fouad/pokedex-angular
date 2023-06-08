@@ -41,6 +41,7 @@ export class PokemonDetailsComponent implements OnInit, OnDestroy {
   isOpen: boolean = false;
   testStory: any;
   encounterMethods: any;
+  currentPokemonIndex: number = 0;
 
   constructor(
     public dialogRef: MatDialogRef<PokemonDetailsComponent>,
@@ -52,7 +53,6 @@ export class PokemonDetailsComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    // this.getDescription();
     this.getPokemonDetails(this.pokemon.id);
     this.isOpen = true;
   }
@@ -108,9 +108,9 @@ export class PokemonDetailsComponent implements OnInit, OnDestroy {
     this.isOpen = false;
   }
 
-  getDescription() {
+  getDescription(pokemonId: number) {
     const id = this.data.id;
-    this.evolutionService.getEncounterMethod(id).subscribe((data) => {
+    this.evolutionService.getEncounterMethod(pokemonId).subscribe((data) => {
       this.encounterMethods = data;
       console.log(this.encounterMethods);
     });
@@ -126,23 +126,20 @@ export class PokemonDetailsComponent implements OnInit, OnDestroy {
   }
 
   showNextPokemon() {
-    // Implement the logic to show the next Pokémon
-    // Example:
-    const nextPokemonId = this.pokemon.id + 1;
+    const nextPokemonId = this.currentPokemonIndex + 1;
     this.getPokemonDetails(nextPokemonId);
   }
 
   showPreviousPokemon() {
-    // Implement the logic to show the previous Pokémon
-    // Example:
-    const previousPokemonId = this.pokemon.id - 1;
+    const previousPokemonId = this.currentPokemonIndex - 1;
     this.getPokemonDetails(previousPokemonId);
   }
 
   getPokemonDetails(pokemonId: number) {
     this.pokemonsService.getPokemons(pokemonId).subscribe((data) => {
       this.pokemon = data;
-      this.getDescription();
+      this.getDescription(pokemonId);
+      this.currentPokemonIndex = pokemonId;
     });
   }
 }

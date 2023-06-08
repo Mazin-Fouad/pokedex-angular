@@ -7,7 +7,7 @@
         (click)="openDialog(pokemon)"
       >
         <div
-          class="card mb-4 ms-auto me-auto"
+          class="card mb-4 ms-auto me-auto pokemon-card"
           [ngClass]="getPokemonType(pokemon)"
           BackgroundStyle
         >
@@ -43,11 +43,13 @@
     <br />
 
     <div
-      class="alert alert-dark ms-auto me-auto d-flex align-items-center justify-content-center"
+      class="alert ms-auto me-auto d-flex align-items-center justify-content-center shadow"
       role="alert"
     >
-      Icons made by Flaticon
-      <img src="assets/imgs/pikachu.png" class="pikachu" />
+      <span class="">
+        Icons made by Flaticon
+        <img src="assets/imgs/pikachu.png" class="pikachu"
+      /></span>
     </div>
   </div>
 </section>
