@@ -1,6 +1,13 @@
-import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
+import {
+  Component,
+  HostListener,
+  Inject,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { EvolutionService } from 'src/services/evolution.service';
+import { PokemonApiService } from 'src/services/pokemon-api.service';
 
 @Component({
   selector: 'app-pokemon-details',
@@ -38,13 +45,15 @@ export class PokemonDetailsComponent implements OnInit, OnDestroy {
   constructor(
     public dialogRef: MatDialogRef<PokemonDetailsComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private evolutionService: EvolutionService
+    private evolutionService: EvolutionService,
+    private pokemonsService: PokemonApiService
   ) {
     this.pokemon = data;
   }
 
   ngOnInit() {
-    this.getDescription();
+    // this.getDescription();
+    this.getPokemonDetails(this.pokemon.id);
     this.isOpen = true;
   }
 
@@ -104,6 +113,36 @@ export class PokemonDetailsComponent implements OnInit, OnDestroy {
     this.evolutionService.getEncounterMethod(id).subscribe((data) => {
       this.encounterMethods = data;
       console.log(this.encounterMethods);
+    });
+  }
+
+  @HostListener('window:keydown', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent) {
+    if (event.key === 'ArrowRight') {
+      this.showNextPokemon();
+    } else if (event.key === 'ArrowLeft') {
+      this.showPreviousPokemon();
+    }
+  }
+
+  showNextPokemon() {
+    // Implement the logic to show the next Pokémon
+    // Example:
+    const nextPokemonId = this.pokemon.id + 1;
+    this.getPokemonDetails(nextPokemonId);
+  }
+
+  showPreviousPokemon() {
+    // Implement the logic to show the previous Pokémon
+    // Example:
+    const previousPokemonId = this.pokemon.id - 1;
+    this.getPokemonDetails(previousPokemonId);
+  }
+
+  getPokemonDetails(pokemonId: number) {
+    this.pokemonsService.getPokemons(pokemonId).subscribe((data) => {
+      this.pokemon = data;
+      this.getDescription();
     });
   }
 }

@@ -98,7 +98,7 @@ section {
 }
 
 .wobble-ver-right {
-    animation: wobble-ver-right 3s both infinite 10s;
+    animation: wobble-ver-right 10s both infinite 10s;
 }
 
 @keyframes wobble-ver-right {
@@ -122,4 +122,14 @@ section {
     75% {
         transform: translateY(-6px) rotate(1.2deg);
     }
+}
+
+.alert {
+    width: 220px;
+    height: 30px;
+}
+
+.pikachu {
+    height: 30px;
+    object-fit: cover;
 }
