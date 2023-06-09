@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { PokemonData } from 'src/app/models/pokemon-data';
 import { PokemonApiService } from 'src/services/pokemon-api.service';
-import { Observable, forkJoin } from 'rxjs';
+import { Observable, forkJoin, map } from 'rxjs';
 import {
   MatDialog,
   MAT_DIALOG_DATA,
@@ -17,7 +17,7 @@ import { PokemonDetailsComponent } from '../pokemon-details/pokemon-details.comp
 export class CardsGalleryComponent implements OnInit {
   pokemons: any[] = [];
   filteredPokemons: any[] = [];
-  count: number = 12;
+  count: number = 52;
   totalPokemonCount: number = 0;
   @Input() searchQuery: string | undefined = '';
 
@@ -27,7 +27,7 @@ export class CardsGalleryComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.fetchPokemons(1, 12);
+    this.fetchPokemons(1, 52);
     this.filteredPokemons = this.pokemons.slice(0, this.count);
   }
 
