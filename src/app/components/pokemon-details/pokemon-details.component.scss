@@ -1,8 +1,8 @@
 section {
     color: #f1f1f1;
-    background-color: #1f1f1f;
+    background-color: hsl(0, 0%, 12%);
     max-width: 400px;
-    overflow: hidden;
+    height: 100dvh;
 
     .circle {
         width: 300px;
@@ -155,4 +155,8 @@ section {
     img {
         height: 35px;
     }
+}
+
+.bg-color {
+    background-color: hsl(0, 0%, 12%);
 }

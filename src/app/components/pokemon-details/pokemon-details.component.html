@@ -1,4 +1,4 @@
-<section class="pb-3">
+<section class="pb-3 responsive-section">
   <div class="container">
     <div class="header pt-lg-3 d-flex justify-content-between">
       <div>
@@ -63,7 +63,7 @@
     </div>
   </div>
 
-  <div class="d-flex justify-content-center mb-3">
+  <div class="d-flex justify-content-center bg-color pb-2">
     <app-progressbar
       style="width: 90%; margin-left: auto"
       [pokemon]="pokemon"
@@ -71,11 +71,13 @@
     ></app-progressbar>
   </div>
 
-  <div class="info-text ms-auto me-auto d-flex align-items-start">
-    <img src="assets/imgs/information.png" />
-    <span>
-      Use the arrow keys (Right/Left) on your keyboard to navigate between the
-      next and previous Pokémon.
-    </span>
+  <div class="bg-color">
+    <div class="info-text ms-auto me-auto d-flex align-items-start">
+      <img src="assets/imgs/information.png" />
+      <span>
+        Use the arrow keys (Right/Left) on your keyboard to navigate between the
+        next and previous Pokémon.
+      </span>
+    </div>
   </div>
 </section>
