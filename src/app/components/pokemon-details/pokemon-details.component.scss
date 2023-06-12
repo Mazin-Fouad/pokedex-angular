@@ -2,7 +2,14 @@ section {
     color: #f1f1f1;
     background-color: hsl(0, 0%, 12%);
     max-width: 400px;
-    height: 100dvh;
+    height: 100vh;
+    overflow: scroll;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+
+    &::-webkit-scrollbar {
+        display: none !important;
+    }
 
     .circle {
         width: 300px;
